@@ -1,0 +1,19 @@
+# Docker most used base images:
+
+| Base Image                 | Size (approx) | Package Manager                 | Use Case(s)                                      | Notes                                                                                   |
+| -------------------------- | ------------- | ------------------------------- | ------------------------------------------------ | --------------------------------------------------------------------------------------- |
+| **alpine**                 | \~5 MB        | `apk`                           | Minimal, fast containers                         | Great for microservices and quick startup. Requires careful handling for missing tools. |
+| **ubuntu**                 | \~29 MB+      | `apt`                           | General-purpose image, popular in CI/CD, ML, etc | Full GNU toolchain. Familiar to most users.                                             |
+| **debian**                 | \~22–120 MB   | `apt`                           | Stable base for many apps                        | Very stable and popular upstream of Ubuntu.                                             |
+| **python**                 | \~25–900 MB   | Varies (based on Debian/Alpine) | For Python apps and scripts                      | Comes in many variants: `python:3.11-alpine`, `python:3.10-slim`, etc.                  |
+| **node**                   | \~50–900 MB   | Varies                          | Node.js-based apps and frontends                 | Multiple variants like `node:alpine`, `node:slim`                                       |
+| **golang**                 | \~300–800 MB  | Varies                          | Go language builds and apps                      | Often used with multi-stage builds.                                                     |
+| **busybox**                | \~1 MB        | N/A                             | Super minimal shell scripting or base tools      | More for testing/debugging or very minimal containers.                                  |
+| **scratch**                | 0 MB          | N/A                             | Ultra-minimal (empty) base                       | Used in final stage of multi-stage builds (e.g., for static binaries).                  |
+| **centos**                 | \~200 MB      | `yum/dnf`                       | Legacy support and RHEL-based systems            | Now deprecated. Replaced by `rockylinux`, `alma`.                                       |
+| **rockylinux**             | \~200 MB      | `dnf`                           | Enterprise-grade containers (CentOS successor)   | RHEL-compatible.                                                                        |
+| **nginx**                  | \~20–50 MB    | N/A                             | Web server base container                        | Pre-configured with NGINX, sometimes based on Alpine.                                   |
+| **mysql / postgres**       | \~50–200 MB   | N/A                             | Pre-built databases                              | Used in local dev, CI, and testing.                                                     |
+| **openjdk**                | \~250 MB+     | Varies                          | Java applications                                | Based on Debian/Alpine/Ubuntu.                                                          |
+| **mariadb**                | \~90–250 MB   | N/A                             | Lightweight MySQL-compatible database            | Popular in containerized environments.                                                  |
+| **jupyter/scipy-notebook** | 1 GB+         | `conda`, `pip`                  | Data science, ML pipelines                       | Based on Debian with Jupyter, Pandas, Numpy, etc.                                       |
